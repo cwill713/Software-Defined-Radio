@@ -1,12 +1,7 @@
 {
   "board": {
-<<<<<<< HEAD:Schematic/Complete Schematic V4/Complete Schematic V4.kicad_prl
     "active_layer": 0,
-    "active_layer_preset": "",
-=======
-    "active_layer": 49,
     "active_layer_preset": "All Layers",
->>>>>>> 1bc5bd180fbe77d28fdad4fe276cbe1103a80a5b:Schematic/SDRrecV5/Complete Schematic V4.kicad_prl
     "auto_track_width": true,
     "hidden_nets": [],
     "high_contrast_mode": 0,
