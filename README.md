@@ -55,7 +55,7 @@ The following are the simulations of our filters and our SDR as a whole.
 
 
 ## Project Results
-When testing to see the minimum discernible signal we hooked our board up to our signal generator, our system running quisk software, and our soundcard. We adjusted the attenuator on the signal generator to output a signal of 14MHz and adjusted the attenuator to see how small of a signal we could detect. In the image below, we see our radio discern a radio of 3.5uV!
+When testing to see the minimum discernible signal we hooked our board up to our signal generator, our system running quisk software, and our soundcard. We adjusted the attenuator on the signal generator to output a signal of 14MHz and adjusted the attenuator to see how small of a signal we could detect. In the image below, we see our radio discern a signal of 3.5uV!
 ![minDecV2](https://user-images.githubusercontent.com/103695977/171743162-00ffc03b-b354-496b-b6c2-f4261597c40c.png)
 
 Next, we decided to see if we could find any bandwidths where people were talking and try to listen in. We found two bandwidths being used for communications.
