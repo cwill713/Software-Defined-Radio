@@ -34,6 +34,7 @@ The lowpass filter will block all frequencies greater that 100kHz.
 
 ### Voltage Smoother
 ![Voltage Smoother](https://user-images.githubusercontent.com/103695977/171760121-b3ce913d-ab7f-4082-ad9f-a03cbcf7cb58.jpg)
+
 The Voltage Smoother with take the 5V Vcc and remove as much noise as possible that comes in from the computer and outputs a smoother 5V for the SDR to use.
 
 ### Arduino and Si5351
@@ -47,17 +48,27 @@ The following are the simulations of our filters and our SDR as a whole.
 ![Bandpass Filter Simulation Graph](https://user-images.githubusercontent.com/103695977/172128945-2436fb08-f1e6-4906-a7a6-28c304c560f3.jpg)
 ![Bandpass Filter Simulation](https://user-images.githubusercontent.com/103695977/172128985-f59a6ec8-1b1a-4b8a-a930-dfc2ace7611d.jpg)
 
+
 ### Lowpass Filter
 ![LowPass Filter Simulation](https://user-images.githubusercontent.com/103695977/172126680-7654ed1c-1729-4d28-b0ac-22c0453f8cd5.jpg)
 ![LowPass Filter Schematic](https://user-images.githubusercontent.com/103695977/172126698-47ae7323-1dd5-43b3-99ac-888cf9888982.jpg)
 
 ### Complete SDR
+![Complete Simulation Graph](https://user-images.githubusercontent.com/103695977/172208557-2a06cd88-0c1e-46c1-88f6-4b392ef950bf.jpg)
+![Complete SDR Simulation](https://user-images.githubusercontent.com/103695977/172208710-ec5d7ed2-cf76-4863-a852-ea123d72f428.jpg)
 
 
 ## Project Results
-When testing to see the minimum discernible signal we hooked our board up to our signal generator, our system running quisk software, and our soundcard. We adjusted the attenuator on the signal generator to output a signal of 14MHz and adjusted the attenuator to see how small of a signal we could detect. In the image below, we see our radio discern a signal of 3.5uV!
+My partner and I each designed our own version of our board, but my partner had the better board layout. So we used his V5 of our schematic, PCB, and drill files and sent them to our professor who sent our files to [JLPCB](https://jlcpcb.com/VGS?utm_source=gg_vgs&utm_medium=cpc&gclid=Cj0KCQjwqPGUBhDwARIsANNwjV4Y9aU908uwwHsgXCAJ3L9PZ44l-hPgCvsU4kgto-ll1H0iRJroh1UaAsKwEALw_wcB) for printing. We then ordered that parts needed then constructed and tested our board. 
+
+### Initial Testing
+During the initial testing, we found that we had a wiring issue in our mixer, we were missing our ground plane on our gerber, and we didn't have our second set of opamps between +/- Vcc. We fixed these issues by cutting and jumping traces and manually wiring our grounds together. PUT LINK TO PICTURES. We fixed these issues in [V6](https://github.com/cwill713/Software-Defined-Radio/tree/main/Schematic%20Files/SDRrecV6).
+
+### Minimum Discenable Signal
+When testing to see the minimum discernible signal we connected our board up to our signal generator, our system running quisk software, and our soundcard. We adjusted the attenuator on the signal generator to output a signal of 14MHz and adjusted the attenuator to see how small of a signal we could detect. In the image below, we see our radio discern a signal of 3.5uV!
 ![minDecV2](https://user-images.githubusercontent.com/103695977/171743162-00ffc03b-b354-496b-b6c2-f4261597c40c.png)
 
+### Practical Test
 Next, we decided to see if we could find any bandwidths where people were talking and try to listen in. We found two bandwidths being used for communications.
 
 The first was being used to communicate the weather from what we are assuming to be an air traffic control tower. 
