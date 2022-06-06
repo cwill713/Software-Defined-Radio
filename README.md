@@ -1,46 +1,57 @@
 # Software-Defined-Radio-Reciever
-This is the design of Software Defined Radio built in collaboration with Joshua Mularczyk for my Engineering Electronics II class
+This project, assigned to us by [Dr. Frohne](https://github.com/frohro), combines our professors' interest HAM radio and a practical application of gain, opamp analysis, noise, and AC/DC analysis that we learned in Electronics I. This is the design of Software Defined Radio built in collaboration with [Joshua Mularczyk](https://github.com/JoshuaMularczyk) for our Engineering Electronics II class.
 
 ## Design Specifications
-When perfroming research for this project, Joshua and I began to figure out what specifations our SDR would follow. Origianlly, we wanted to build a commercial FM radio, but after discusstion with Dr. Frohne, our professor, we reconsidered. The final specifications we decided on are as follows.
-- Frequency Range: 8MHZ - 18Mhz
-- Radio Type: Showrtwave
-- One Butterworth Bandpass Filter
-- One Tayloe Mixer
-- One Bessel Lowpass Filter
-- One Power Supply Noise Filter
+When perfroming research for this project, Joshua and I began to figure out what specifations our SDR would follow. Origianlly, we wanted to build a commercial FM radio, but after discusstion with Dr. Frohne, we reconsidered. The final specifications we decided on are as follows:
+- Frequency Range: 7MHZ - 18MHz
+- Radio Type: Shortwave
+- Inexpensive
+- No Noise
+
+
+The subcirucits used to create this SDR are: 
+- Butterworth Bandpass Filter
+- Tayloe Mixer
+- Bessel Lowpass Filter
+- Power Supply Noise Filter
+- 2.5V Voltage Bias
+- Arduino Controlled Oscillator
 
 ## Schematics
 The following are the initial schematics that Joshua and I have designed for the SDR.
 
 ### BandPass Filter
-![BandPass Filter and Voltage Divider](https://user-images.githubusercontent.com/103695977/171759491-6baa6ea1-8451-4fa1-af03-81ee3740693b.jpg)
-We built this bandpass filter using the LC Filter Design Tool found at https://rf-tools.com/lc-filter/. This is a Butterworth Filter that will only allow frequencies between 8MHz and 18MHz to pass through it.
+![BandPass Filter and Voltage Divider](https://user-images.githubusercontent.com/103695977/172123798-0871c234-771f-46bd-9502-651a71eb86e6.jpg)
+We built this bandpass filter using the [LC Filter Design Tool](https://rf-tools.com/lc-filter/). This is a Butterworth Filter that will only allow frequencies between 8MHz and 18MHz to pass through it.
+
+The voltage divider will take our Filtered 5V and output a 2.5 DC voltage to drive the rest of the circuit. 
 
 ### Mixer and Lowpass Filter
 ![Tayloe Mixer](https://user-images.githubusercontent.com/103695977/171759381-e49fd43a-300a-4075-a9eb-c46a4cfd6736.jpg)
 The mixer that Joshua and I decided to use was  Tayloe Mixer. The Tayloe mixer uses switches to combined the signals that are 180 degrees out of phase with differential amplifiers so that signals above and below the oscilator frequecy can be detected.
 
-Our Lowpass filter will block all frequencies greater that 100kHz.
+The lowpass filter will block all frequencies greater that 100kHz.
 
 ### Voltage Smoother
 ![Voltage Smoother](https://user-images.githubusercontent.com/103695977/171760121-b3ce913d-ab7f-4082-ad9f-a03cbcf7cb58.jpg)
-Our Voltage Smoother with take the 5V Vcc and remove as much noise as possible that comes in from the computer and outputs a smoother 5V for the SDR to use.
+The Voltage Smoother with take the 5V Vcc and remove as much noise as possible that comes in from the computer and outputs a smoother 5V for the SDR to use.
 
 ### Arduino and Si5351
 ![Arduino and Si5351](https://user-images.githubusercontent.com/103695977/171760493-9e65d962-7504-4b07-9917-c7026b6bcaa2.jpg)
-Our Si5351 programmable oscillator will allow us to input two clock signals that are 90 degrees out of phase into S0 and S1 of the SN74CBT3253. The Arduino Nano will control the frequency the is put out by the Si5351 for tuning.
+The Si5351 programmable oscillator will allow us to input two clock signals that are 90 degrees out of phase into S0 and S1 of the SN74CBT3253. The Arduino Nano will control the frequency the is put out by the Si5351 for tuning.
 
 ## Simulations
-The following are the simulations of our filters as we have not yet fully simulated the SDR as a whole.
+The following are the simulations of our filters and our SDR as a whole.
 
 ### Bandpass Filter
-![image](https://user-images.githubusercontent.com/103695977/163806294-b24794c1-b576-47e0-a262-90af70f5b265.png)
-![image](https://user-images.githubusercontent.com/103695977/163810045-d9e52c8f-7157-414a-8c3d-9e4d7e16fb39.png)
+![Bandpass Filter Simulation Graph](https://user-images.githubusercontent.com/103695977/172128945-2436fb08-f1e6-4906-a7a6-28c304c560f3.jpg)
+![Bandpass Filter Simulation](https://user-images.githubusercontent.com/103695977/172128985-f59a6ec8-1b1a-4b8a-a930-dfc2ace7611d.jpg)
 
 ### Lowpass Filter
-![image](https://user-images.githubusercontent.com/103695977/163810193-a9069945-3c7c-4594-b9f1-aa382b970d71.png)
-![image](https://user-images.githubusercontent.com/103695977/163810300-0baa7ec9-fe0b-4580-a687-907685373d8e.png)
+![LowPass Filter Simulation](https://user-images.githubusercontent.com/103695977/172126680-7654ed1c-1729-4d28-b0ac-22c0453f8cd5.jpg)
+![LowPass Filter Schematic](https://user-images.githubusercontent.com/103695977/172126698-47ae7323-1dd5-43b3-99ac-888cf9888982.jpg)
+
+### Complete SDR
 
 
 ## Project Results
