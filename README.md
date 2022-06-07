@@ -47,7 +47,8 @@ The lowpass filter will block all frequencies greater that 100kHz.
 The Voltage Smoother with take the 5V Vcc and remove as much noise as possible that comes in from the computer and outputs a smoother 5V for the SDR to use.
 
 ### Arduino and Si5351
-![Arduino and Si5351](https://user-images.githubusercontent.com/103695977/171760493-9e65d962-7504-4b07-9917-c7026b6bcaa2.jpg)
+![Arduino and Si5351](https://user-images.githubusercontent.com/103695977/172481568-51654324-0069-432d-a443-24010c4640cb.jpg)
+
 The Si5351 programmable oscillator will allow us to input two clock signals that are 90 degrees out of phase into S0 and S1 of the SN74CBT3253. The Arduino Nano will control the frequency the is put out by the Si5351 for tuning.
 
 ## Simulations
