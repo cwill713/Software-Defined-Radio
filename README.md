@@ -19,7 +19,7 @@ The subcirucits used to create this SDR are:
 
 ## Theory
 
-<img width="634" alt="blockdia" src="https://user-images.githubusercontent.com/103919092/172436558-2e65173e-d889-476e-afc4-3da0d40f0bdf.PNG">
+<img width="597" alt="blockdia" src="https://user-images.githubusercontent.com/103919092/172442353-dc40c33d-0328-46e8-bc0f-a3b80807796e.PNG">
 
 ## Schematics
 The following are the initial schematics that Joshua and I have designed for the SDR.
