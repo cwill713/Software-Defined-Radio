@@ -21,7 +21,8 @@ The subcirucits used to create this SDR are:
 
 ## Theory
 
-<img width="597" alt="blockdia" src="https://user-images.githubusercontent.com/103919092/172442353-dc40c33d-0328-46e8-bc0f-a3b80807796e.PNG">
+![image](https://user-images.githubusercontent.com/103695977/172480825-1f928152-ae4b-4940-97ff-ea07275fcb95.png)
+
 
 This block diagram shows an overveir of how a Software Defined Radio works. A signal is recieved from the antenna and then passes through the band pass filter. Here all desired frequencies are let through and the others discarded. Then the signals are passed through the Tayloe Mmixer where the signal is then split into four new ones that are 90 degrees out of phase. The these signals, the sets that are 180 degrees apart, are combined in a set of opamps that double as lowpass filters to ensure the output signal has a frequency no greater than 100kHz. These new two signals are then passed through the sound card to the system running the [Quisk](https://james.ahlstrom.name/quisk/) software which allows us to hear what is being transmitted on the signal and change the signal taht we are listening to. The Arduino Nano and the Si5351 that runs a [program](https://github.com/cwill713/Software-Defined-Radio/tree/main/Arduino%20Code/New_Quisk_Nano) that allows it to act as our oscillator that can be changed by what ever frequency Quisk is trying to demodulate.
 
