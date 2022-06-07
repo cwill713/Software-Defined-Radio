@@ -21,7 +21,9 @@ The subcirucits used to create this SDR are:
 
 ## Theory
 
-<img width="634" alt="blockdia" src="https://user-images.githubusercontent.com/103919092/172436558-2e65173e-d889-476e-afc4-3da0d40f0bdf.PNG">
+<img width="597" alt="blockdia" src="https://user-images.githubusercontent.com/103919092/172442353-dc40c33d-0328-46e8-bc0f-a3b80807796e.PNG">
+
+This block diagram shows an overveir of how a Software Defined Radio works. A signal is recieved from the antenna and then passes through the band pass filter. Here all desired frequencies are let through and the others discarded. Then the signals are passed through the Tayloe Mmixer where the signal is then split into four new ones that are 90 degrees out of phase. The these signals, the sets that are 180 degrees apart, are combined in a set of opamps that double as lowpass filters to ensure the output signal has a frequency no greater than 100kHz. These new two signals are then passed through the sound card to the system running the [Quisk](https://james.ahlstrom.name/quisk/) software which allows us to hear what is being transmitted on the signal and change the signal taht we are listening to. The Arduino Nano and the Si5351 that runs a [program](https://github.com/cwill713/Software-Defined-Radio/tree/main/Arduino%20Code/New_Quisk_Nano) that allows it to act as our oscillator that can be changed by what ever frequency Quisk is trying to demodulate.
 
 ## Schematics
 The following are the initial schematics that Joshua and I have designed for the SDR.
@@ -88,11 +90,11 @@ After fixing these mistakes on the board, I fixed these issues in the [V6](https
 
 ## Project Resuslts
 ### Minimum Discenable Signal
-When testing to see the minimum discernible signal we connected our board up to our signal generator, our system running quisk software, and our soundcard. We adjusted the attenuator on the signal generator to output a signal of 14MHz and adjusted the attenuator to see how small of a signal we could detect. In the image below, we see our radio discern a signal of .35uV!
+When testing to see the minimum discernible signal we connected our board up to our signal generator, our system running quisk software, and our soundcard. We adjusted the attenuator on the signal generator to output a signal of 14.19MHz and adjusted the attenuator to see how small of a signal we could detect. In the image below, we see our radio discern a signal of .35uV!
 ![minDecV2](https://user-images.githubusercontent.com/103695977/171743162-00ffc03b-b354-496b-b6c2-f4261597c40c.png)
 
 ### Practical Test
-Next, we decided to see if we could find any bandwidths where people were talking and try to listen in. TO do this, we disconnected the board from the signal generator and connected our board to the antenna of our building. Scanning the differnt frequencies we found two bandwidths being used for communications.
+Next, we decided to see if we could find any bandwidths where people were talking and try to listen in. To do this, we disconnected the board from the signal generator and connected our board to the antenna of our building. Scanning the differnt frequencies we found two bandwidths being used for communications.
 
 The first was being used to communicate the weather from what we are assuming to be an air traffic control tower. 
 
